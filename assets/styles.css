@@ -1,0 +1,26 @@
+/* Simple responsive styles */
+:root{
+  --bg:#ffffff;
+  --accent:#0b6fb8;
+  --muted:#666;
+  --max-width:1000px;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:#111;line-height:1.5}
+.container{max-width:var(--max-width);margin:0 auto;padding:1.25rem}
+.site-header{background:#f7f9fb;padding:1.25rem 0;border-bottom:1px solid #eee}
+.hero{display:flex;gap:1rem;align-items:center}
+.photo{width:110px;height:110px;border-radius:8px;object-fit:cover;background:#ddd}
+.hero-text h1{margin:0;font-size:1.6rem}
+.title{color:var(--accent);margin:0.25rem 0;font-weight:600}
+.subtitle{color:var(--muted);margin:0}
+.about, .services, .contact{margin:1.25rem 0;padding:0.75rem;background:#fff;border-radius:8px;box-shadow:0 1px 2px rgba(0,0,0,0.03)}
+.highlights{list-style:none;padding:0;margin:0.5rem 0 0}
+.highlights li{background:#f1fbff;padding:0.5rem;border-radius:6px;margin-bottom:0.5rem;border:1px solid #e3f2fb}
+.site-footer{padding:1rem 0;text-align:center;color:var(--muted);font-size:0.9rem}
+.button{display:inline-block;padding:0.5rem 0.75rem;background:var(--accent);color:#fff;border-radius:6px;text-decoration:none}
+@media (max-width:700px){
+  .hero{flex-direction:row;align-items:center}
+  .hero-text{flex:1}
+}
