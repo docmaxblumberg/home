@@ -204,3 +204,51 @@ h2 {
     justify-content: center;
   }
 }
+
+/* Publications */
+
+.publications {
+  margin-top: 3rem;
+}
+
+.pub-list {
+  list-style: none;
+  padding: 0;
+  margin: 2rem 0 0;
+}
+
+.pub-list li {
+  display: grid;
+  grid-template-columns: 70px 1fr;
+  gap: 1.25rem;
+  padding: 1.25rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.pub-list li:last-child {
+  border-bottom: none;
+}
+
+.pub-year {
+  font-weight: 600;
+  color: var(--secondary);
+  font-size: 0.95rem;
+}
+
+.pub-title {
+  margin: 0;
+  font-weight: 500;
+}
+
+.pub-meta {
+  margin: 0.35rem 0 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.pub-note {
+  margin-top: 1.5rem;
+  font-size: 0.95rem;
+  color: var(--muted);
+}
+
