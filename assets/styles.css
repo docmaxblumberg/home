@@ -1,5 +1,8 @@
 .photo {
-    object-position: top;
-    /* other styles here */
+  object-fit: cover;
+  object-position: top;
+  width: 200px;
+  height: 200px;
 }
-/* additional styles */
+
+/* Other styles can be included here */
