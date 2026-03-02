@@ -183,79 +183,6 @@ h2 {
   text-decoration: underline;
 }
 
-/* Photography Banner */
-
-.photo-banner {
-  background: #111;
-  text-align: center;
-  padding: 1.25rem 1.25rem;
-  border-bottom: 1px solid #2a2a2a;
-}
-
-.photo-banner-btn {
-  background: white;
-  color: var(--primary);
-  font-size: 0.95rem;
-}
-
-/* Photography Section */
-
-.photography-section {
-  background: #0f0f0f;
-  padding: 4rem 0;
-  border-top: 1px solid #1e1e1e;
-}
-
-.photography-section .container {
-  max-width: 1100px;
-}
-
-.photo-heading {
-  font-family: "Courier New", Courier, monospace;
-  font-size: 1.3rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: #c8c8c8;
-  margin-bottom: 1.25rem;
-  border-bottom: 1px solid #2a2a2a;
-  padding-bottom: 1rem;
-}
-
-.photo-intro {
-  color: #888;
-  font-size: 1rem;
-  line-height: 1.8;
-  margin: 0 0 2.5rem;
-}
-
-.photo-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 0.75rem;
-}
-
-.photo-slot {
-  aspect-ratio: 4 / 3;
-  background: #1a1a1a;
-  border: 1px solid #2a2a2a;
-  border-radius: 4px;
-  overflow: hidden;
-}
-
-.photo-slot img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-
-}
-
-@media (max-width: 768px) {
-  .photo-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
 /* Footer */
 
 .site-footer {
@@ -324,4 +251,73 @@ h2 {
   margin-top: 1.5rem;
   font-size: 0.95rem;
   color: var(--muted);
+}
+
+/* Photography Banner */
+
+.photo-banner {
+  background: #111;
+  text-align: center;
+  padding: 1.25rem;
+  border-bottom: 1px solid #2a2a2a;
+}
+
+.photo-banner-btn {
+  background: white;
+  color: var(--primary);
+  font-size: 0.95rem;
+}
+
+/* Photography Section */
+
+.photography-section {
+  background: #0f0f0f;
+  padding: 4rem 0;
+  border-top: 1px solid #1e1e1e;
+}
+
+.photo-heading {
+  font-family: "Courier New", Courier, monospace;
+  font-size: 1.3rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #c8c8c8;
+  margin-bottom: 1.25rem;
+  border-bottom: 1px solid #2a2a2a;
+  padding-bottom: 1rem;
+}
+
+.photo-intro {
+  color: #888;
+  font-size: 1rem;
+  line-height: 1.8;
+  margin: 0 0 2.5rem;
+}
+
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.75rem;
+}
+
+.photo-slot {
+  aspect-ratio: 4 / 3;
+  min-height: 0;
+  background: #1a1a1a;
+  border: 1px solid #2a2a2a;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.photo-slot img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .photo-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
