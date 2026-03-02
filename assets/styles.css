@@ -187,29 +187,14 @@ h2 {
 .photo-banner {
   background: #111;
   text-align: center;
-  padding: 0.85rem 1.25rem;
+  padding: 1.25rem 1.25rem;
   border-bottom: 1px solid #2a2a2a;
 }
 
 .photo-banner-btn {
-  display: inline-block;
-  font-family: "Courier New", Courier, monospace;
-  font-size: 0.85rem;
-  font-weight: 600;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: #e0e0e0;
-  text-decoration: none;
-  border: 1px solid #444;
-  padding: 0.45rem 1.1rem;
-  border-radius: 3px;
-  transition: color 0.2s ease, border-color 0.2s ease, background 0.2s ease;
-}
-
-.photo-banner-btn:hover {
-  color: #fff;
-  border-color: #999;
-  background: rgba(255,255,255,0.05);
+  background: white;
+  color: var(--primary);
+  font-size: 0.95rem;
 }
 
 /* Photography Section */
@@ -221,7 +206,7 @@ h2 {
 }
 
 .photography-section .container {
-  max-width: 680px;
+  max-width: 1100px;
 }
 
 .photo-heading {
@@ -239,7 +224,26 @@ h2 {
   color: #888;
   font-size: 1rem;
   line-height: 1.8;
-  margin: 0;
+  margin: 0 0 2.5rem;
+}
+
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.75rem;
+}
+
+.photo-slot {
+  aspect-ratio: 1 / 1;
+  background: #1a1a1a;
+  border: 1px solid #2a2a2a;
+  border-radius: 4px;
+}
+
+@media (max-width: 768px) {
+  .photo-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 /* Footer */
