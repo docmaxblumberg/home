@@ -3,18 +3,17 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Max Blumberg, MD, MPH, QME</title>
-
-  <meta name="description" content="Dr. Max Blumberg — Occupational & Environmental Medicine specialist and California Qualified Medical Examiner (QME)." />
+  <title>Max Blumberg — Choose</title>
+  <meta name="description" content="Choose: Professional (MD, MPH, QME) or Film Photography — Max Blumberg" />
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="assets/styles.css" />
+  <link rel="stylesheet" href="assets/landing.css" />
 
-  <!-- Google Analytics -->
+  <!-- Google Analytics (kept on landing) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-YKML4BQEXJ"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -23,195 +22,42 @@
     gtag('config', 'G-YKML4BQEXJ');
   </script>
 </head>
-
 <body>
+  <main class="landing" id="main">
+    <h1 class="sr-only">Max Blumberg — Choose a site</h1>
 
-<header class="site-header">
-  <div class="container hero">
-    <img src="assets/headshot.jpg" alt="Dr. Max Blumberg" class="photo" />
-
-    <div class="hero-text">
-      <h1>Max Blumberg, MD, MPH</h1>
-      <p class="title">California Qualified Medical Examiner (QME)</p>
-      <p class="subtitle">
-        Occupational &amp; Environmental Medicine<br>
-        Independent Medical Evaluations &amp; Medical-Legal Opinions
-      </p>
-
-      <div class="hero-actions">
-        <a href="#contact" class="btn primary">Request Consultation</a>
-        <a href="#services" class="btn secondary">View Services</a>
-        <a href="photography.html" class="btn secondary">B&amp;W Film Photography</a>
-      </div>
-    </div>
-  </div>
-</header>
-
-<main class="container">
-
-  <section class="about card">
-    <h2>About</h2>
-    <p>
-      Dr. Max Blumberg is an occupational and environmental medicine specialist who diagnoses and treats
-      work-related and environmentally induced injuries and illnesses. He provides care for patients
-      following traumatic accidents and evaluates exposures to toxic metals, chemicals, infectious agents,
-      and other occupational hazards.
-    </p>
-
-    <p>
-      He also has specialized expertise in repetitive strain injuries and performs independent medical
-      evaluations (IMEs) and Qualified Medical Evaluations (QMEs) in California workers' compensation cases.
-    </p>
-
-    <ul class="highlights">
-      <li><strong>California Qualified Medical Examiner (QME)</strong></li>
-      <li>Board Certified in Occupational &amp; Environmental Medicine (UCSF Residency)</li>
-      <li>MD — University at Buffalo Jacobs School of Medicine (SUNY)</li>
-      <li>MPH — University of California, Berkeley</li>
-    </ul>
-  </section>
-
-  <section id="contact" class="contact callout">
-    <h2>Contact</h2>
-    <p>
-      For QME appointments, medical-legal inquiries, or clinical consultations:
-    </p>
-
-    <p class="contact-info">
-      <strong>Email:</strong>
-      <a href="mailto:OEMAdmin@ucsf.edu">OEMAdmin@ucsf.edu</a><br>
-      <strong>Phone:</strong>
-      <a href="tel:+14158857580">(415) 885-7580</a>
-    </p>
-  </section>
-
-  <section id="services" class="services">
-    <h2>Services</h2>
-
-    <div class="service-grid">
-      <div class="service-card">
-        <h3>Qualified Medical Evaluations</h3>
-        <p>
-          Comprehensive QME evaluations for California workers' compensation claims,
-          including causation analysis, apportionment, and impairment ratings.
-        </p>
-      </div>
-
-      <div class="service-card">
-        <h3>Medical-Legal Reports</h3>
-        <p>
-          Clear, well-reasoned medical-legal reports and expert opinions grounded
-          in evidence-based occupational medicine.
-        </p>
-      </div>
-
-      <div class="service-card">
-        <h3>Occupational &amp; Environmental Care</h3>
-        <p>
-          Clinical evaluation and management of work-related injuries,
-          toxic exposures, and environmentally induced illness.
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <section class="experience card">
-    <h2>Experience</h2>
-    <p>
-      Dr. Blumberg serves as Associate Medical Director of UCSF Occupational Health Services,
-      where he advocates for the health and safety of healthcare workers and leads efforts
-      to prevent workplace injury and illness.
-    </p>
-
-    <p>
-      Prior to UCSF, he practiced as a staff physician for the Erie County Department of Health
-      in Buffalo, New York.
-    </p>
-  </section>
-
-  <section id="publications" class="publications card">
-    <h2>Selected Publications</h2>
-
-    <ol class="pub-list">
-      <li>
-        <span class="pub-year">2025</span>
-        <div>
-          <p class="pub-title">
-            Outbreaks of COVID-19 among healthcare personnel in a U.S. Veterans Affairs health care system
-          </p>
-          <p class="pub-meta"><em>Journal of Occupational Medicine and Toxicology</em></p>
+    <section class="tiles" role="navigation" aria-label="Choose site">
+      <a class="tile tile-left" href="medical.html" aria-label="Enter professional site: MD, MPH, QME">
+        <div class="tile-media">
+          <img src="assets/headshot.jpg" alt="Dr. Max Blumberg portrait" loading="lazy" />
         </div>
-      </li>
-
-      <li>
-        <span class="pub-year">2025</span>
-        <div>
-          <p class="pub-title">
-            Recruitment challenges for physician training in occupational and environmental medicine
-          </p>
-          <p class="pub-meta"><em>Journal of Occupational and Environmental Medicine</em></p>
+        <div class="tile-body">
+          <h2>MD, MPH, QME</h2>
+          <p class="tile-sub">Professional • Medical evaluations • QME &amp; IME services</p>
+          <button class="tile-cta" aria-hidden="true">Enter Professional</button>
         </div>
-      </li>
+      </a>
 
-      <li>
-        <span class="pub-year">2024</span>
-        <div>
-          <p class="pub-title">
-            Doctors are facing a mental health crisis. We must make it easier for them to get help
-          </p>
-          <p class="pub-meta"><em>California Health Report</em></p>
+      <a class="tile tile-right" href="photography.html" aria-label="Enter film photography site">
+        <div class="tile-media">
+          <img src="assets/orchid.JPEG" alt="Black and white film photograph" loading="lazy" />
         </div>
-      </li>
-
-      <li>
-        <span class="pub-year">2024</span>
-        <div>
-          <p class="pub-title">
-            Improving the occupational and environmental medicine physician training pipeline
-          </p>
-          <p class="pub-meta"><em>ICOH Congress Proceedings</em></p>
+        <div class="tile-body">
+          <h2>Film Photography</h2>
+          <p class="tile-sub">Hobby • Black &amp; white film work</p>
+          <button class="tile-cta" aria-hidden="true">Enter Photography</button>
         </div>
-      </li>
+      </a>
+    </section>
 
-      <li>
-        <span class="pub-year">2023</span>
-        <div>
-          <p class="pub-title">
-            Cleaning during the COVID-19 pandemic and occupational health implications
-          </p>
-          <p class="pub-meta"><em>ACOEM National Conference Proceedings</em></p>
-        </div>
-      </li>
+    <footer class="landing-footer">
+      <p>&copy; <span id="year"></span> Max Blumberg</p>
+    </footer>
+  </main>
 
-      <li>
-        <span class="pub-year">2021</span>
-        <div>
-          <p class="pub-title">
-            Real-world comparison between the Tono-Pen and Goldmann applanation tonometry
-          </p>
-          <p class="pub-meta"><em>International Ophthalmology</em></p>
-        </div>
-      </li>
-
-      <li>
-        <span class="pub-year">2019</span>
-        <div>
-          <p class="pub-title">
-            Influence of eyelid pigmentation on the diagnosis of meibomian gland dysfunction
-          </p>
-          <p class="pub-meta"><em>Journal of Occupational and Environmental Epidemiology</em></p>
-        </div>
-      </li>
-    </ol>
-  </section>
-
-</main>
-
-<footer class="site-footer">
-  <div class="container">
-    <p>&copy; Max Blumberg, MD, MPH, QME</p>
-  </div>
-</footer>
-
+  <script>
+    // runtime niceties
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
