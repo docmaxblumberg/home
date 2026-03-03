@@ -6,14 +6,13 @@
   <title>Max Blumberg — Film Photography</title>
   <meta name="description" content="Film photography and black & white work by Max Blumberg." />
 
-  <!-- load the stylesheet from assets (recommended) -->
   <link rel="stylesheet" href="assets/photo.css" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-  <!-- Google Analytics (kept) -->
+  <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-YKML4BQEXJ"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -26,9 +25,10 @@
 
 <header class="photo-banner">
   <div class="container">
-    <h1 class="photo-heading"> Max Blumberg Film Photography</h1>
+    <h1 class="photo-heading">Max Blumberg — Film Photography</h1>
     <p class="photo-intro">
-      Outside of work Max is a film photographer who enjoys taking black and white film photographs of people, plants, and places around him. He develops and prints the pictures himself at Harvey Milk Photo Center in San Francisco. Click any image to view a larger scan.
+      Outside of work Max is a film photographer who enjoys taking black and white film photographs of people, plants, and places around him.
+      He develops and prints the pictures himself at Harvey Milk Photo Center in San Francisco. Click any image to view a larger scan.
     </p>
   </div>
 </header>
@@ -36,30 +36,72 @@
 <main class="photography-section">
   <div class="container">
     <div class="photo-grid">
-      <!-- Replace these src values with the exact filenames (and exact letter case) present in your repo under assets/ -->
+
+      <!-- Use your original filenames. The onerror handler will try a fallback (root path) if assets/... fails. -->
       <div class="photo-slot">
-        <img src="assets/photo1.jpg" alt="Film photo 1" loading="lazy"
-             onerror="this.style.opacity=.4; this.nextElementSibling.style.display='block'">
-        <div class="photo-missing" style="display:none;color:#888;font-size:.9rem;margin-top:.5rem">photo missing: assets/photo1.jpg</div>
+        <img data-filename="assets/orchid.JPEG" alt="Orchid" loading="lazy"
+             onerror="imgFallback(this)">
+        <div class="photo-missing" style="display:none;color:#888;font-size:.9rem;margin-top:.5rem">
+          photo missing: orchid.JPEG
+        </div>
       </div>
 
       <div class="photo-slot">
-        <img src="assets/photo2.jpg" alt="Film photo 2" loading="lazy"
-             onerror="this.style.opacity=.4; this.nextElementSibling.style.display='block'">
-        <div class="photo-missing" style="display:none;color:#888;font-size:.9rem;margin-top:.5rem">photo missing: assets/photo2.jpg</div>
+        <img data-filename="assets/poker.JPEG" alt="Red hot poker plant" loading="lazy"
+             onerror="imgFallback(this)">
+        <div class="photo-missing" style="display:none;color:#888;font-size:.9rem;margin-top:.5rem">
+          photo missing: poker.JPEG
+        </div>
       </div>
 
       <div class="photo-slot">
-        <img src="assets/photo3.jpg" alt="Film photo 3" loading="lazy"
-             onerror="this.style.opacity=.4; this.nextElementSibling.style.display='block'">
-        <div class="photo-missing" style="display:none;color:#888;font-size:.9rem;margin-top:.5rem">photo missing: assets/photo3.jpg</div>
+        <img data-filename="assets/coit.JPEG" alt="San Francisco with Coit Tower" loading="lazy"
+             onerror="imgFallback(this)">
+        <div class="photo-missing" style="display:none;color:#888;font-size:.9rem;margin-top:.5rem">
+          photo missing: coit.JPEG
+        </div>
       </div>
 
       <div class="photo-slot">
-        <img src="assets/photo4.jpg" alt="Film photo 4" loading="lazy"
-             onerror="this.style.opacity=.4; this.nextElementSibling.style.display='block'">
-        <div class="photo-missing" style="display:none;color:#888;font-size:.9rem;margin-top:.5rem">photo missing: assets/photo4.jpg</div>
+        <img data-filename="assets/pyramid.JPEG" alt="Trans America Pyramid" loading="lazy"
+             onerror="imgFallback(this)">
+        <div class="photo-missing" style="display:none;color:#888;font-size:.9rem;margin-top:.5rem">
+          photo missing: pyramid.JPEG
+        </div>
       </div>
+
+      <div class="photo-slot">
+        <img data-filename="assets/ladies.JPEG" alt="Painted Ladies" loading="lazy"
+             onerror="imgFallback(this)">
+        <div class="photo-missing" style="display:none;color:#888;font-size:.9rem;margin-top:.5rem">
+          photo missing: ladies.JPEG
+        </div>
+      </div>
+
+      <div class="photo-slot">
+        <img data-filename="assets/forest.JPEG" alt="Marin Forest" loading="lazy"
+             onerror="imgFallback(this)">
+        <div class="photo-missing" style="display:none;color:#888;font-size:.9rem;margin-top:.5rem">
+          photo missing: forest.JPEG
+        </div>
+      </div>
+
+      <div class="photo-slot">
+        <img data-filename="assets/beach.JPEG" alt="Chrissy Beach" loading="lazy"
+             onerror="imgFallback(this)">
+        <div class="photo-missing" style="display:none;color:#888;font-size:.9rem;margin-top:.5rem">
+          photo missing: beach.JPEG
+        </div>
+      </div>
+
+      <div class="photo-slot">
+        <img data-filename="assets/halfdome.JPEG" alt="Yosemite Half Dome" loading="lazy"
+             onerror="imgFallback(this)">
+        <div class="photo-missing" style="display:none;color:#888;font-size:.9rem;margin-top:.5rem">
+          photo missing: halfdome.JPEG
+        </div>
+      </div>
+
     </div>
   </div>
 </main>
@@ -71,13 +113,46 @@
 </footer>
 
 <script>
-  document.getElementById('year-photo').textContent = new Date().getFullYear();
+  // Put in the intended src for each image on page load.
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.photo-slot img').forEach(img => {
+      const src = img.getAttribute('data-filename');
+      if (src) img.src = src;
+    });
+    document.getElementById('year-photo').textContent = new Date().getFullYear();
+  });
 
-  // log image load failures to the console to help debugging
+  // Fallback logic: if assets/... returned 404, try root filename (no assets/).
+  function imgFallback(imgEl){
+    // if we've already tried fallback, show "missing"
+    if (imgEl.dataset.triedFallback) {
+      // show missing text
+      const note = imgEl.nextElementSibling;
+      if (note) note.style.display = 'block';
+      console.warn('Image failed to load (both paths):', imgEl.getAttribute('src'));
+      return;
+    }
+
+    const current = imgEl.getAttribute('src') || '';
+    // if current starts with "assets/", try the same filename at root
+    if (current.startsWith('assets/')) {
+      const rootPath = current.replace(/^assets\//, '');
+      imgEl.dataset.triedFallback = '1';
+      imgEl.src = rootPath;
+      return;
+    }
+
+    // otherwise if it didn't start with assets/ and failed, show missing
+    const note = imgEl.nextElementSibling;
+    if (note) note.style.display = 'block';
+    console.warn('Image failed to load:', imgEl.getAttribute('src'));
+  }
+
+  // also log failures (helpful during debugging)
   window.addEventListener('load', () => {
     document.querySelectorAll('.photo-slot img').forEach(img => {
       img.addEventListener('error', () => {
-        console.warn('Image failed to load:', img.src);
+        console.warn('Image error event for:', img.src);
       });
     });
   });
