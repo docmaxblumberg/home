@@ -91,12 +91,12 @@ body {
 }
 
 .btn.secondary {
-  border: 1px solid rgba(255,255,255,0.6);
-  color: white;
+  background: white;
+  color: var(--primary);
 }
 
 .btn.secondary:hover {
-  background: rgba(255,255,255,0.1);
+  background: #f0f4f8;
 }
 
 /* Sections */
@@ -256,16 +256,21 @@ h2 {
 /* Photography Banner */
 
 .photo-banner {
-  background: #111;
+  background: linear-gradient(135deg, var(--primary), #163a5a);
   text-align: center;
   padding: 1.25rem;
-  border-bottom: 1px solid #2a2a2a;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
 }
 
 .photo-banner-btn {
-  background: white;
-  color: var(--primary);
+  background: transparent !important;
+  color: white !important;
+  border: 1px solid rgba(255,255,255,0.6);
   font-size: 0.95rem;
+}
+
+.photo-banner-btn:hover {
+  background: rgba(255,255,255,0.1) !important;
 }
 
 /* Photography Section */
