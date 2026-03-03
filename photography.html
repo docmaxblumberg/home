@@ -6,12 +6,14 @@
   <title>Max Blumberg — Film Photography</title>
   <meta name="description" content="Film photography and black & white work by Max Blumberg." />
 
+  <!-- load the stylesheet from assets (recommended) -->
   <link rel="stylesheet" href="assets/photo.css" />
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-  <!-- Google Analytics -->
+  <!-- Google Analytics (kept) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-YKML4BQEXJ"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -25,18 +27,39 @@
 <header class="photo-banner">
   <div class="container">
     <h1 class="photo-heading">Film Photography</h1>
-    <p class="photo-intro">Black &amp; white film work and prints.</p>
+    <p class="photo-intro">
+      Black &amp; white film work and prints. A selection of recent scans and contact sheets — click any image to view a larger scan.
+    </p>
   </div>
 </header>
 
 <main class="photography-section">
   <div class="container">
     <div class="photo-grid">
-      <!-- Example photo slots; replace img srcs with your images -->
-      <div class="photo-slot"><img src="assets/photo1.jpg" alt="Film photo 1" loading="lazy"></div>
-      <div class="photo-slot"><img src="assets/photo2.jpg" alt="Film photo 2" loading="lazy"></div>
-      <div class="photo-slot"><img src="assets/photo3.jpg" alt="Film photo 3" loading="lazy"></div>
-      <div class="photo-slot"><img src="assets/photo4.jpg" alt="Film photo 4" loading="lazy"></div>
+      <!-- Replace these src values with the exact filenames (and exact letter case) present in your repo under assets/ -->
+      <div class="photo-slot">
+        <img src="assets/photo1.jpg" alt="Film photo 1" loading="lazy"
+             onerror="this.style.opacity=.4; this.nextElementSibling.style.display='block'">
+        <div class="photo-missing" style="display:none;color:#888;font-size:.9rem;margin-top:.5rem">photo missing: assets/photo1.jpg</div>
+      </div>
+
+      <div class="photo-slot">
+        <img src="assets/photo2.jpg" alt="Film photo 2" loading="lazy"
+             onerror="this.style.opacity=.4; this.nextElementSibling.style.display='block'">
+        <div class="photo-missing" style="display:none;color:#888;font-size:.9rem;margin-top:.5rem">photo missing: assets/photo2.jpg</div>
+      </div>
+
+      <div class="photo-slot">
+        <img src="assets/photo3.jpg" alt="Film photo 3" loading="lazy"
+             onerror="this.style.opacity=.4; this.nextElementSibling.style.display='block'">
+        <div class="photo-missing" style="display:none;color:#888;font-size:.9rem;margin-top:.5rem">photo missing: assets/photo3.jpg</div>
+      </div>
+
+      <div class="photo-slot">
+        <img src="assets/photo4.jpg" alt="Film photo 4" loading="lazy"
+             onerror="this.style.opacity=.4; this.nextElementSibling.style.display='block'">
+        <div class="photo-missing" style="display:none;color:#888;font-size:.9rem;margin-top:.5rem">photo missing: assets/photo4.jpg</div>
+      </div>
     </div>
   </div>
 </main>
@@ -49,6 +72,15 @@
 
 <script>
   document.getElementById('year-photo').textContent = new Date().getFullYear();
+
+  // log image load failures to the console to help debugging
+  window.addEventListener('load', () => {
+    document.querySelectorAll('.photo-slot img').forEach(img => {
+      img.addEventListener('error', () => {
+        console.warn('Image failed to load:', img.src);
+      });
+    });
+  });
 </script>
 
 </body>
