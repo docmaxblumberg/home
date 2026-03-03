@@ -6,6 +6,7 @@
   <title>Max Blumberg — Film Photography</title>
   <meta name="description" content="Film photography and black & white work by Max Blumberg." />
 
+  <!-- main photo stylesheet -->
   <link rel="stylesheet" href="assets/photo.css" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -20,6 +21,73 @@
     gtag('js', new Date());
     gtag('config', 'G-YKML4BQEXJ');
   </script>
+
+  <!-- Lightbox modal styles (small, scoped) -->
+  <style>
+    /* make images clearly clickable */
+    .photo-slot img { cursor: zoom-in; transition: transform .12s ease; }
+    .photo-slot img:active { transform: scale(.995); }
+
+    /* modal backdrop */
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      display: none; /* shown via JS */
+      justify-content: center;
+      align-items: center;
+      background: rgba(0,0,0,0.75);
+      z-index: 1200;
+      padding: 24px;
+    }
+
+    .lightbox[aria-hidden="false"] { display: flex; }
+
+    .lightbox-inner {
+      max-width: 1200px;
+      max-height: 92vh;
+      width: 100%;
+      position: relative;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+
+    .lightbox-img {
+      max-width: 100%;
+      max-height: 100%;
+      box-shadow: 0 18px 40px rgba(0,0,0,0.6);
+      border-radius: 6px;
+      background: #000;
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: -8px;
+      right: -8px;
+      background: rgba(255,255,255,0.9);
+      border-radius: 999px;
+      width:36px;height:36px;
+      display:flex;align-items:center;justify-content:center;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+    }
+
+    .lightbox-close:focus { outline: 3px solid rgba(11,95,255,0.18); outline-offset:3px; }
+
+    .lightbox-caption {
+      color: #ddd;
+      font-size: 0.95rem;
+      margin-top: 10px;
+      text-align:center;
+    }
+
+    /* small responsive tweak */
+    @media (max-width:640px){
+      .lightbox-inner{ padding: 12px; }
+      .lightbox-close { top: 6px; right: 6px; transform: translateY(0); }
+    }
+  </style>
 </head>
 <body>
 
@@ -35,76 +103,53 @@
 
 <main class="photography-section">
   <div class="container">
-    <div class="photo-grid">
+    <div class="photo-grid" id="photoGrid">
 
-      <!-- Use your original filenames. The onerror handler will try a fallback (root path) if assets/... fails. -->
+      <!-- Images (use exact filenames & casing in your assets/) -->
       <div class="photo-slot">
-        <img data-filename="assets/orchid.JPEG" alt="Orchid" loading="lazy"
-             onerror="imgFallback(this)">
-        <div class="photo-missing" style="display:none;color:#888;font-size:.9rem;margin-top:.5rem">
-          photo missing: orchid.JPEG
-        </div>
+        <img data-filename="assets/orchid.JPEG" alt="Orchid" loading="lazy">
       </div>
 
       <div class="photo-slot">
-        <img data-filename="assets/poker.JPEG" alt="Red hot poker plant" loading="lazy"
-             onerror="imgFallback(this)">
-        <div class="photo-missing" style="display:none;color:#888;font-size:.9rem;margin-top:.5rem">
-          photo missing: poker.JPEG
-        </div>
+        <img data-filename="assets/poker.JPEG" alt="Red hot poker plant" loading="lazy">
       </div>
 
       <div class="photo-slot">
-        <img data-filename="assets/coit.JPEG" alt="San Francisco with Coit Tower" loading="lazy"
-             onerror="imgFallback(this)">
-        <div class="photo-missing" style="display:none;color:#888;font-size:.9rem;margin-top:.5rem">
-          photo missing: coit.JPEG
-        </div>
+        <img data-filename="assets/coit.JPEG" alt="San Francisco with Coit Tower" loading="lazy">
       </div>
 
       <div class="photo-slot">
-        <img data-filename="assets/pyramid.JPEG" alt="Trans America Pyramid" loading="lazy"
-             onerror="imgFallback(this)">
-        <div class="photo-missing" style="display:none;color:#888;font-size:.9rem;margin-top:.5rem">
-          photo missing: pyramid.JPEG
-        </div>
+        <img data-filename="assets/pyramid.JPEG" alt="Trans America Pyramid" loading="lazy">
       </div>
 
       <div class="photo-slot">
-        <img data-filename="assets/ladies.JPEG" alt="Painted Ladies" loading="lazy"
-             onerror="imgFallback(this)">
-        <div class="photo-missing" style="display:none;color:#888;font-size:.9rem;margin-top:.5rem">
-          photo missing: ladies.JPEG
-        </div>
+        <img data-filename="assets/ladies.JPEG" alt="Painted Ladies" loading="lazy">
       </div>
 
       <div class="photo-slot">
-        <img data-filename="assets/forest.JPEG" alt="Marin Forest" loading="lazy"
-             onerror="imgFallback(this)">
-        <div class="photo-missing" style="display:none;color:#888;font-size:.9rem;margin-top:.5rem">
-          photo missing: forest.JPEG
-        </div>
+        <img data-filename="assets/forest.JPEG" alt="Marin Forest" loading="lazy">
       </div>
 
       <div class="photo-slot">
-        <img data-filename="assets/beach.JPEG" alt="Chrissy Beach" loading="lazy"
-             onerror="imgFallback(this)">
-        <div class="photo-missing" style="display:none;color:#888;font-size:.9rem;margin-top:.5rem">
-          photo missing: beach.JPEG
-        </div>
+        <img data-filename="assets/beach.JPEG" alt="Chrissy Beach" loading="lazy">
       </div>
 
       <div class="photo-slot">
-        <img data-filename="assets/halfdome.JPEG" alt="Yosemite Half Dome" loading="lazy"
-             onerror="imgFallback(this)">
-        <div class="photo-missing" style="display:none;color:#888;font-size:.9rem;margin-top:.5rem">
-          photo missing: halfdome.JPEG
-        </div>
+        <img data-filename="assets/halfdome.JPEG" alt="Yosemite Half Dome" loading="lazy">
       </div>
 
     </div>
   </div>
 </main>
+
+<!-- Lightbox modal -->
+<div id="lightbox" class="lightbox" role="dialog" aria-hidden="true" aria-label="Image preview">
+  <div class="lightbox-inner" role="document">
+    <button class="lightbox-close" id="lightboxClose" aria-label="Close preview">&times;</button>
+    <img id="lightboxImage" class="lightbox-img" src="" alt="">
+  </div>
+  <div class="lightbox-caption" id="lightboxCaption" aria-live="polite"></div>
+</div>
 
 <footer class="site-footer">
   <div class="container">
@@ -113,46 +158,80 @@
 </footer>
 
 <script>
-  // Put in the intended src for each image on page load.
+  // populate image src attributes from data-filename on DOM ready
   document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.photo-slot img').forEach(img => {
       const src = img.getAttribute('data-filename');
       if (src) img.src = src;
     });
     document.getElementById('year-photo').textContent = new Date().getFullYear();
-  });
 
-  // Fallback logic: if assets/... returned 404, try root filename (no assets/).
-  function imgFallback(imgEl){
-    // if we've already tried fallback, show "missing"
-    if (imgEl.dataset.triedFallback) {
-      // show missing text
-      const note = imgEl.nextElementSibling;
-      if (note) note.style.display = 'block';
-      console.warn('Image failed to load (both paths):', imgEl.getAttribute('src'));
-      return;
+    // attach click handlers for lightbox
+    const lightbox = document.getElementById('lightbox');
+    const lbImage = document.getElementById('lightboxImage');
+    const lbCaption = document.getElementById('lightboxCaption');
+    const lbClose = document.getElementById('lightboxClose');
+
+    // open lightbox
+    document.getElementById('photoGrid').addEventListener('click', (e) => {
+      const img = e.target.closest('.photo-slot img');
+      if (!img) return;
+      // don't open if image failed to load
+      if (img.naturalWidth === 0 && !img.complete) return;
+      openLightbox(img);
+    });
+
+    // close handlers
+    lbClose.addEventListener('click', closeLightbox);
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) closeLightbox();
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && lightbox.getAttribute('aria-hidden') === 'false') closeLightbox();
+    });
+
+    function openLightbox(imgEl){
+      lbImage.src = imgEl.src; // full path already used
+      lbImage.alt = imgEl.alt || '';
+      lbCaption.textContent = imgEl.alt || '';
+      lightbox.setAttribute('aria-hidden', 'false');
+      // set focus to close button for keyboard users
+      lbClose.focus();
+      // prevent page scroll
+      document.body.style.overflow = 'hidden';
     }
 
-    const current = imgEl.getAttribute('src') || '';
-    // if current starts with "assets/", try the same filename at root
-    if (current.startsWith('assets/')) {
-      const rootPath = current.replace(/^assets\//, '');
-      imgEl.dataset.triedFallback = '1';
-      imgEl.src = rootPath;
-      return;
+    function closeLightbox(){
+      const lightbox = document.getElementById('lightbox');
+      lightbox.setAttribute('aria-hidden', 'true');
+      document.getElementById('lightboxImage').src = '';
+      document.body.style.overflow = '';
+      // return focus to the first visible image for continuity
+      const firstImg = document.querySelector('.photo-slot img');
+      if (firstImg) firstImg.focus({preventScroll: true});
     }
 
-    // otherwise if it didn't start with assets/ and failed, show missing
-    const note = imgEl.nextElementSibling;
-    if (note) note.style.display = 'block';
-    console.warn('Image failed to load:', imgEl.getAttribute('src'));
-  }
+    // make images keyboard-focusable
+    document.querySelectorAll('.photo-slot img').forEach(img => {
+      img.setAttribute('tabindex', '0');
+      // open on Enter or Space when focused
+      img.addEventListener('keydown', (ev) => {
+        if (ev.key === 'Enter' || ev.key === ' ') {
+          ev.preventDefault();
+          openLightbox(ev.target);
+        }
+      });
+    });
 
-  // also log failures (helpful during debugging)
-  window.addEventListener('load', () => {
+    // if any image errors, try root fallback (already added earlier), and console.warn
     document.querySelectorAll('.photo-slot img').forEach(img => {
       img.addEventListener('error', () => {
-        console.warn('Image error event for:', img.src);
+        console.warn('Image failed to load:', img.src);
+        // fallback try: if path startsWith assets/, try without it
+        if (!img.dataset.triedFallback && img.src.includes('/assets/')) {
+          img.dataset.triedFallback = '1';
+          img.src = img.src.replace('/assets/', '/');
+        }
       });
     });
   });
